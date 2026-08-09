@@ -1,0 +1,25 @@
+From 0142fd4f36f11d234e97ce9349977cc3cfb0de0f Mon Sep 17 00:00:00 2001
+From: Sylvain Terrien <sylvain.terrien@protonmail.com>
+Date: Fri, 5 Sep 2025 17:59:53 +0200
+Subject: [PATCH] add install script
+
+---
+ install.sh | 6 ++++++
+ 1 file changed, 6 insertions(+)
+ create mode 100755 install.sh
+
+diff --git a/install.sh b/install.sh
+new file mode 100755
+index 00000000..75a5fb05
+--- /dev/null
++++ b/install.sh
+@@ -0,0 +1,6 @@
++#!/bin/sh
++
++export HELIX_DISABLE_AUTO_GRAMMAR_BUILD=1
++export HELIX_DEFAULT_RUNTIME=$(realpath ./runtime/)
++
++cargo install --profile opt --config 'build.rustflags="-C target-cpu=native"' --path helix-term --locked
+-- 
+2.50.1
+
